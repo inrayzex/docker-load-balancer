@@ -19,7 +19,7 @@ text
 ### 🚀 Quick Start
 ```bash
 # 1. Clone repository
-git clone https://github.com/YOUR-USERNAME/docker-load-balancer.git
+git clone https://github.com/inrayzex/docker-load-balancer.git
 cd docker-load-balancer
 
 # 2. Run setup
