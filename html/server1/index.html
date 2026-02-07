@@ -1,0 +1,82 @@
+html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Load Balancer Demo - Server 1</title>
+    <style>
+        body {
+            background-color: #e6f7ff;
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #0066cc;
+        }
+        .server-info {
+            background: #f0f8ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .tech-item {
+            background: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Server 1 - Docker Container</h1>
+        <p>This is a backend server running in an isolated Docker container</p>
+        
+        <div class="server-info">
+            <h3>📊 Server Information:</h3>
+            <p><strong>Container ID:</strong> <span id="container-id">webserver1</span></p>
+            <p><strong>Port:</strong> 8081</p>
+            <p><strong>Status:</strong> <span style="color: green;">● Active</span></p>
+            <p><strong>Load Balancer:</strong> Nginx Round-Robin</p>
+        </div>
+        
+        <h3>🔄 How it works:</h3>
+        <p>Requests are distributed between Server 1 and Server 2 by the Nginx load balancer.</p>
+        <p>If this server fails, traffic automatically goes to Server 2.</p>
+        
+        <div class="tech-stack">
+            <div class="tech-item">Docker</div>
+            <div class="tech-item">Nginx</div>
+            <div class="tech-item">Rocky Linux</div>
+            <div class="tech-item">Bash</div>
+        </div>
+        
+        <p style="margin-top: 30px; color: #666;">
+            <em>Part of a high-availability web infrastructure project</em>
+        </p>
+    </div>
+    
+    <script>
+        // Dynamic content
+        document.getElementById('container-id').textContent = 
+            window.location.hostname + ':' + window.location.port;
+        document.title = 'Server 1 - ' + window.location.hostname;
+    </script>
+</body>
+</html>
