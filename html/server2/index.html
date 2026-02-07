@@ -1,0 +1,108 @@
+html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Load Balancer Demo - Server 2</title>
+    <style>
+        body {
+            background-color: #ffe6e6;
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #cc0066;
+        }
+        .server-info {
+            background: #fff0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .tech-item {
+            background: #cc0066;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .architecture {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔥 Server 2 - Docker Container</h1>
+        <p>This is the second backend server for load balancing demonstration</p>
+        
+        <div class="server-info">
+            <h3>📊 Server Information:</h3>
+            <p><strong>Container ID:</strong> <span id="container-id">webserver2</span></p>
+            <p><strong>Port:</strong> 8082</p>
+            <p><strong>Status:</strong> <span style="color: green;">● Active</span></p>
+            <p><strong>Role:</strong> Failover & Load Distribution</p>
+        </div>
+        
+        <div class="architecture">
+            <strong>Architecture:</strong><br>
+            User → Nginx (Port 80) → [Server1:8081, Server2:8082]<br>
+            ⬆<br>
+            Automatic Failover
+        </div>
+        
+        <h3>🎯 Key Features:</h3>
+        <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+            <li>High Availability with automatic failover</li>
+            <li>Load balancing with Nginx reverse proxy</li>
+            <li>Container isolation with Docker</li>
+            <li>Bash automation scripts for management</li>
+            <li>Security hardening with SELinux</li>
+        </ul>
+        
+        <div class="tech-stack">
+            <div class="tech-item">High Availability</div>
+            <div class="tech-item">Load Balancing</div>
+            <div class="tech-item">Failover</div>
+            <div class="tech-item">Automation</div>
+        </div>
+        
+        <p style="margin-top: 30px; color: #666;">
+            <em>Refresh the page to see load balancing in action</em>
+        </p>
+    </div>
+    
+    <script>
+        // Dynamic content
+        document.getElementById('container-id').textContent = 
+            window.location.hostname + ':' + window.location.port;
+        document.title = 'Server 2 - ' + window.location.hostname;
+        
+        // Show current time
+        const timeElement = document.createElement('p');
+        timeElement.innerHTML = '<strong>Current Time:</strong> ' + new Date().toLocaleTimeString();
+        timeElement.style.marginTop = '20px';
+        timeElement.style.fontFamily = 'monospace';
+        document.querySelector('.server-info').appendChild(timeElement);
+    </script>
+</body>
+</html>
